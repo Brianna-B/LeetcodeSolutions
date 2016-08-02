@@ -1,0 +1,16 @@
+class Solution {
+public:
+
+    string reverseVowels(string s) {
+        int len=s.length();
+        string vowelstr;
+        string vowel=s.find_first_of("aeiouAEIOU");
+        while (!vowel=std::string::npos){
+            vowelstr[vowel]=s[vowel];
+            vowel=s.find_first_of("aeiouAEIOU",vowel+1);
+        }
+        
+        
+        
+    }
+};
