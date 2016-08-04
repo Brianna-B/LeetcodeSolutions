@@ -1,0 +1,22 @@
+//Task: Write a function that takes a string as input and reverse only the vowels of a string.
+//My solution makes use of find_first_of() and find_last_of() to locate vowels for reversal.
+class Solution {
+public:
+
+    string reverseVowels(string s) {
+       
+        char vowelstr;// temperarily stores a char for swapping
+        size_t vowelf=s.find_first_of("aeiouAEIOU");//stores location of first vowel
+        size_t vowell=s.find_last_of("aeiouAEIOU");//stores location of last vowel
+        while (vowelf<vowell){
+            vowelstr=s[vowelf];// swapping first and last vowels
+            s[vowelf]=s[vowell];
+            s[vowell]=vowelstr;
+            vowelf=s.find_first_of("aeiouAEIOU",vowelf+1);// finds location of next vowel
+            vowell=s.find_last_of("aeiouAEIOU",vowell-1);// finds location of next vowel
+        }
+        return s;
+        
+        
+    }
+};
